@@ -1,0 +1,167 @@
+:root{
+  --bg-1: #e6f0ff;
+  --blue-500: #3b82f6;
+  --violet-600: #7c3aed;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --max-width: 1200px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:var(--text);
+  background:linear-gradient(180deg, #f7fbff 0%, #f3f0ff 100%);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem 1rem;background:#111;color:#fff;border-radius:4px}
+
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,var(--blue-500),var(--violet-600));color:#fff;padding:.5rem 0;box-shadow:0 4px 24px rgba(0,0,0,.12)}
+.header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1rem}
+.logo{text-decoration:none;color:#fff;font-weight:800;font-size:1.15rem}
+
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.nav-links a{color:#fff;text-decoration:none;padding:.5rem .6rem;border-radius:6px;transition:background .18s}
+.nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.08)}
+.header-actions{display:flex;gap:.5rem;align-items:center}
+.icon-link{color:#fff;text-decoration:none;font-size:1.05rem;padding:.35rem .5rem;border-radius:6px;transition:background .18s}
+.icon-link:hover{background:rgba(255,255,255,.06)}
+
+.nav-toggle{display:none;background:transparent;border:0;color:inherit}
+.hamburger{display:inline-block;width:26px;height:2px;background:#fff;position:relative}
+.hamburger::before,.hamburger::after{content:'';position:absolute;left:0;width:100%;height:2px;background:#fff}
+.hamburger::before{top:-8px}.hamburger::after{top:8px}
+
+.hero{padding:3.5rem 0;background:linear-gradient(180deg, rgba(59,130,246,.06), rgba(124,58,237,.03))}
+.hero h1{font-size:2.2rem;margin:0 0 .75rem;text-align:center}
+.lead{max-width:900px;margin:0 auto 1.25rem;text-align:center;color:var(--muted);line-height:1.7}
+.hero-logo{display:flex;justify-content:center;margin:1.25rem 0}
+
+.ubicacion-horarios{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;margin-top:1.25rem}
+.templo-img{width:100%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(59,130,246,.08)}
+.ubicacion-text .address{margin:0 0 1rem}
+.card.horarios{background:var(--card-bg);padding:1rem;border-radius:10px;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+.card.horarios h3{margin:0 0 .5rem}
+.card.horarios ul{margin:0;padding-left:1.2rem;color:var(--muted)}
+
+.section{padding:3rem 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0), rgba(243,240,255,.5))}
+.muted{color:var(--muted)}
+
+.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem}
+.event-card{background:var(--card-bg);border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,.06);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.event-card:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(2,6,23,.09)}
+.event-card img{width:100%;height:160px;object-fit:cover}
+.event-body{padding:1rem}
+.event-title{margin:0 0 .5rem;font-size:1.05rem}
+.event-meta{color:var(--muted);font-size:.95rem;margin-bottom:.5rem}
+
+.grupos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.grupo{display:flex;gap:1rem;align-items:center;background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 8px 20px rgba(2,6,23,.04)}
+.grupo-img{width:160px;height:110px;object-fit:cover;border-radius:8px}
+.grupo-body{flex:1}
+
+.pastor-card{display:flex;gap:1rem;align-items:center;background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,.05)}
+.pastor-img{width:160px;height:160px;object-fit:cover;border-radius:8px}
+
+.pastores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+
+.ministerios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.mini-card{background:var(--card-bg);padding:1rem;border-radius:8px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,.04);transition:transform .18s}
+.mini-card:hover{transform:translateY(-6px)}
+.mini-card h4{margin:.5rem 0}
+
+.site-footer{background:linear-gradient(180deg,#081224,#06102a);color:#e6eefc;padding:1.5rem 0;margin-top:2rem}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:0 1rem;flex-wrap:wrap}
+.logo-small{font-weight:800}
+.footer-socials a{color:#dbeafe;text-decoration:none;margin-left:1rem}
+
+.to-top{position:fixed;right:1rem;bottom:1rem;background:linear-gradient(180deg,var(--blue-500),var(--violet-600));color:#fff;border:0;padding:.6rem .75rem;border-radius:8px;box-shadow:0 10px 24px rgba(15,23,42,.18);cursor:pointer;display:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .ubicacion-horarios{grid-template-columns:1fr}
+  .grupos-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;top:64px;left:0;right:0;background:linear-gradient(90deg,var(--blue-500),var(--violet-600));flex-direction:column;padding:1rem;display:none}
+  .nav-links.show{display:flex}
+  .nav-toggle{display:block}
+  .nav-links a{padding:1rem;border-radius:4px}
+  .header-actions{display:none}
+}
+
+@media (min-width:901px){
+  .nav-toggle{display:none}
+}
+
+@media (max-width:520px){
+  .hero h1{font-size:1.6rem}
+  .lead{padding:0 1rem}
+}
+
+.small{font-size:.9rem}
+
+/* ====== HEADER LOGO ====== */
+
+.logo-b {
+  width: 200px;        /* tamaño ideal y seguro */
+  max-width: 25%;
+  height: auto;
+  object-fit: contain;}
+
+/* ====== ICONOS DE REDES SOCIALES ====== */
+.social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+
+.header-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;}
+
+/* ====== HERO LOGO ====== */
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.hero-logo-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;        /* recorte circular */
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.6);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* ====== IMAGENES PASTORES ====== */
+.pastor-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pastor-card:hover{transform:translateY(-6px)}
+
+.pastor-img {
+  mask-image: linear-gradient(to bottom, 
+      rgba(0,0,0,1) 5%,     
+      rgba(0,0,0,0) 100%     
+  );
+  -webkit-mask-image: linear-gradient(to bottom,
+      rgba(0,0,0,1) 5%,
+      rgba(0,0,0,0) 100%
+  );
+}
+
