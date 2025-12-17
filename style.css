@@ -165,3 +165,14 @@ body{
   );
 }
 
+.mini-btn{
+  display:inline-block;
+  margin-top:.75rem;
+  padding:.45rem .7rem;
+  font-size:.9rem;
+  border-radius:8px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(90deg,var(--blue-500),var(--violet-600));
+}
+.mini-btn:hover{opacity:.95}
