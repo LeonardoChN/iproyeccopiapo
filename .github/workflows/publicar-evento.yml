@@ -2,7 +2,7 @@ name: Publicar evento (events.json)
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
 
 permissions:
   contents: write
