@@ -2,13 +2,13 @@ name: "Nuevo evento (Iglesia)"
 description: "Publicar un evento nuevo en la landing (actualiza events.json y desplaza los anteriores)."
 title: "[Evento] "
 labels: ["nuevo-evento"]
+
 body:
   - type: input
     id: title
     attributes:
       label: "Título del evento"
-      description: "Ej: Culto de Gratitud"
-      placeholder: "Escribe el título"
+      placeholder: "Ej: Jesús, la Luz del Mundo"
     validations:
       required: true
 
@@ -16,8 +16,7 @@ body:
     id: date
     attributes:
       label: "Fecha y hora"
-      description: "Usa el formato sugerido para que se vea bien en la web."
-      placeholder: "31-12-2025 22:00 hrs"
+      placeholder: "Enero 2026 · Fecha por confirmar"
     validations:
       required: true
 
@@ -25,7 +24,6 @@ body:
     id: description
     attributes:
       label: "Descripción"
-      description: "Texto que aparecerá debajo del título."
       placeholder: "Escribe la descripción del evento..."
     validations:
       required: true
@@ -35,10 +33,8 @@ body:
     attributes:
       label: "Imagen del evento"
       description: |
-        Adjunta la imagen aquí:
-        - Arrastra y suelta la imagen en este cuadro, o pégala.
-        - Debe quedar algo como: ![](https://....)
+        Adjunta la imagen aquí (arrastrar/pegar) para que se genere el link ![](...)
         IMPORTANTE: sube 1 sola imagen.
-      placeholder: "Pega aquí la imagen (arrastrar/soltar) para que quede el link."
+      placeholder: "Arrastra o pega la imagen aquí para que aparezca el link."
     validations:
       required: true
