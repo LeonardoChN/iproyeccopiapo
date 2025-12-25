@@ -17,14 +17,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Parse Issue Form a JSON
+        id: issue_parser
+        uses: edumserrano/github-issue-forms-parser@v1
+        with:
+          template-filepath: '.github/ISSUE_TEMPLATE/nuevo-evento.yml'
+          issue-form-body: '${{ github.event.issue.body }}'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Publicar evento
+      - name: Publicar evento (actualiza events.json + baja a top 3)
         env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
+          PARSED_ISSUE: ${{ steps.issue_parser.outputs.parsed-issue }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           node tools/publish-event.js
