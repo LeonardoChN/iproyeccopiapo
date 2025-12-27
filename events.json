@@ -1,5 +1,11 @@
 [
   {
+    "title": "Jesús la luz del mundo",
+    "date": "Enero 2026",
+    "image": "images/eventos/event_6_1766840663337.png",
+    "description": "Jesús la luz del mundo aca este es un texto de ejemplo :) Saludos"
+  },
+  {
     "title": "Año del Señor",
     "date": "31-12-2025 22:00 hrs",
     "image": "images/eventos/a.png",
@@ -10,11 +16,5 @@
     "date": "26-12-2025 20:00 hrs",
     "image": "images/eventos/b.png",
     "description": "Nuestro salvador ha nacido, vengan y adoremos juntos!🙌🏽❤️‍🔥 Queremos celebrar esta navidad en familia y estas totalmente invitado!! Te esperamos el 26 de diciembre a las 20 hrs en nuestra casa del Padre💒"
-  },
-  {
-    "title": "Culto de Mujeres",
-    "date": "28-11-2025 20:00 hrs",
-    "image": "images/eventos/c.png",
-    "description": "Se acerca nuestro último culto de mujeres del año🎊🤩 Queremos dejarlas a todas cordialmente invitadas, serán muy bienvenidas y bendecidas💝"
   }
 ]
