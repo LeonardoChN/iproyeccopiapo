@@ -1,20 +1,20 @@
 :root{
-  --bg-1: #e6f0ff;
-  --blue-500: #3b82f6;
-  --violet-600: #7c3aed;
-  --text: #0f172a;
-  --muted: #6b7280;
-  --card-bg: #ffffff;
-  --max-width: 1200px;
+  --bg-1:#e6f0ff;
+  --blue-500:#3b82f6;
+  --violet-600:#7c3aed;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --card-bg:#ffffff;
+  --max-width:1200px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
   color:var(--text);
-  background:linear-gradient(180deg, #f7fbff 0%, #f3f0ff 100%);
+  background:linear-gradient(180deg,#f7fbff 0%,#f3f0ff 100%);
   -webkit-font-smoothing:antialiased;
 }
 
@@ -22,27 +22,94 @@ body{
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem 1rem;background:#111;color:#fff;border-radius:4px}
 
-.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,var(--blue-500),var(--violet-600));color:#fff;padding:.5rem 0;box-shadow:0 4px 24px rgba(0,0,0,.12)}
-.header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1rem}
-.logo{text-decoration:none;color:#fff;font-weight:800;font-size:1.15rem}
+/* =========================
+   HEADER / NAV
+========================= */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:linear-gradient(90deg,var(--blue-500),var(--violet-600));
+  color:#fff;
+  padding:.5rem 0;
+  box-shadow:0 4px 24px rgba(0,0,0,.12);
+}
 
-.main-nav{display:flex;align-items:center}
-.nav-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-.nav-links a{color:#fff;text-decoration:none;padding:.5rem .6rem;border-radius:6px;transition:background .18s}
+.header-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 1rem;
+  gap:12px;
+}
+
+.logo{display:inline-flex;align-items:center;text-decoration:none;color:#fff;font-weight:800;font-size:1.15rem}
+
+.main-nav{display:flex;align-items:center;gap:.5rem}
+
+/* links desktop */
+.nav-links{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  padding:.5rem .6rem;
+  border-radius:6px;
+  transition:background .18s;
+}
+
 .nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.08)}
+
+/* hamburguesa */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:0;
+  color:#fff;
+  padding:.35rem .45rem;
+  border-radius:8px;
+}
+
+.nav-toggle:focus,.nav-toggle:hover{background:rgba(255,255,255,.08)}
+
+.hamburger{display:inline-block;width:26px;height:2px;background:#fff;position:relative}
+.hamburger::before,.hamburger::after{content:'';position:absolute;left:0;width:100%;height:2px;background:#fff}
+.hamburger::before{top:-8px}
+.hamburger::after{top:8px}
+
+/* iconos header (gps/redes) */
 .header-actions{display:flex;gap:.5rem;align-items:center}
 .icon-link{color:#fff;text-decoration:none;font-size:1.05rem;padding:.35rem .5rem;border-radius:6px;transition:background .18s}
 .icon-link:hover{background:rgba(255,255,255,.06)}
 
-.nav-toggle{display:none;background:transparent;border:0;color:inherit}
-.hamburger{display:inline-block;width:26px;height:2px;background:#fff;position:relative}
-.hamburger::before,.hamburger::after{content:'';position:absolute;left:0;width:100%;height:2px;background:#fff}
-.hamburger::before{top:-8px}.hamburger::after{top:8px}
+.social-icon{width:32px;height:32px;object-fit:contain;display:block}
+.header-actions a{display:flex;align-items:center;justify-content:center;padding:4px}
 
-.hero{padding:3.5rem 0;background:linear-gradient(180deg, rgba(59,130,246,.06), rgba(124,58,237,.03))}
+/* nav-socials dentro del menú (solo móvil) */
+.nav-socials{display:none;}
+
+/* =========================
+   HERO / SECCIONES
+========================= */
+.hero{padding:3.5rem 0;background:linear-gradient(180deg,rgba(59,130,246,.06),rgba(124,58,237,.03))}
 .hero h1{font-size:2.2rem;margin:0 0 .75rem;text-align:center}
 .lead{max-width:900px;margin:0 auto 1.25rem;text-align:center;color:var(--muted);line-height:1.7}
-.hero-logo{display:flex;justify-content:center;margin:1.25rem 0}
+
+.hero-logo{display:flex;justify-content:center;margin:2rem 0}
+.hero-logo-img{
+  width:180px;height:180px;border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,.6);
+  box-shadow:0 0 20px rgba(0,0,0,.2);
+}
 
 .ubicacion-horarios{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;margin-top:1.25rem}
 .templo-img{width:100%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(59,130,246,.08)}
@@ -52,9 +119,12 @@ body{
 .card.horarios ul{margin:0;padding-left:1.2rem;color:var(--muted)}
 
 .section{padding:3rem 0}
-.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0), rgba(243,240,255,.5))}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(243,240,255,.5))}
 .muted{color:var(--muted)}
 
+/* =========================
+   GRIDS / CARDS
+========================= */
 .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem}
 .event-card{background:var(--card-bg);border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,.06);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
 .event-card:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(2,6,23,.09)}
@@ -68,102 +138,19 @@ body{
 .grupo-img{width:160px;height:110px;object-fit:cover;border-radius:8px}
 .grupo-body{flex:1}
 
-.pastor-card{display:flex;gap:1rem;align-items:center;background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,.05)}
-.pastor-img{width:160px;height:160px;object-fit:cover;border-radius:8px}
-
+.pastor-card{display:flex;gap:1rem;align-items:center;background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,.05);position:relative;overflow:hidden;transition:transform .18s}
+.pastor-card:hover{transform:translateY(-6px)}
+.pastor-img{
+  width:160px;height:160px;object-fit:cover;border-radius:8px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%);
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%);
+}
 .pastores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
 
 .ministerios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
 .mini-card{background:var(--card-bg);padding:1rem;border-radius:8px;text-align:center;box-shadow:0 6px 20px rgba(2,6,23,.04);transition:transform .18s}
 .mini-card:hover{transform:translateY(-6px)}
 .mini-card h4{margin:.5rem 0}
-
-.site-footer{background:linear-gradient(180deg,#081224,#06102a);color:#e6eefc;padding:1.5rem 0;margin-top:2rem}
-.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:0 1rem;flex-wrap:wrap}
-.logo-small{font-weight:800}
-.footer-socials a{color:#dbeafe;text-decoration:none;margin-left:1rem}
-
-.to-top{position:fixed;right:1rem;bottom:1rem;background:linear-gradient(180deg,var(--blue-500),var(--violet-600));color:#fff;border:0;padding:.6rem .75rem;border-radius:8px;box-shadow:0 10px 24px rgba(15,23,42,.18);cursor:pointer;display:none}
-
-/* Responsive */
-@media (max-width:900px){
-  .ubicacion-horarios{grid-template-columns:1fr}
-  .grupos-grid{grid-template-columns:1fr}
-  .nav-links{position:fixed;top:64px;left:0;right:0;background:linear-gradient(90deg,var(--blue-500),var(--violet-600));flex-direction:column;padding:1rem;display:none}
-  .nav-links.show{display:flex}
-  .nav-toggle{display:block}
-  .nav-links a{padding:1rem;border-radius:4px}
-  .header-actions{display:none}
-}
-
-@media (min-width:901px){
-  .nav-toggle{display:none}
-}
-
-@media (max-width:520px){
-  .hero h1{font-size:1.6rem}
-  .lead{padding:0 1rem}
-}
-
-.small{font-size:.9rem}
-
-/* ====== HEADER LOGO ====== */
-
-.logo-b {
-  width: 200px;        /* tamaño ideal y seguro */
-  max-width: 25%;
-  height: auto;
-  object-fit: contain;}
-
-/* ====== ICONOS DE REDES SOCIALES ====== */
-.social-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  display: block;
-}
-
-
-.header-actions a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;}
-
-/* ====== HERO LOGO ====== */
-.hero-logo {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.hero-logo-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;        /* recorte circular */
-  object-fit: cover;
-  border: 4px solid rgba(255,255,255,0.6);
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-/* ====== IMAGENES PASTORES ====== */
-.pastor-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.pastor-card:hover{transform:translateY(-6px)}
-
-.pastor-img {
-  mask-image: linear-gradient(to bottom, 
-      rgba(0,0,0,1) 5%,     
-      rgba(0,0,0,0) 100%     
-  );
-  -webkit-mask-image: linear-gradient(to bottom,
-      rgba(0,0,0,1) 5%,
-      rgba(0,0,0,0) 100%
-  );
-}
 
 .mini-btn{
   display:inline-block;
@@ -177,14 +164,197 @@ body{
 }
 .mini-btn:hover{opacity:.95}
 
-
 .video-wrap{border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,.06);margin-top:1rem}
 .video{position:relative;padding-top:56.25%}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
+.center-btn{margin-top:1.5rem;display:flex;justify-content:center}
 
-.center-btn{
-  margin-top:1.5rem;
-  display:flex;
-  justify-content:center;
+/* =========================
+   FOOTER / TO TOP
+========================= */
+.site-footer{background:linear-gradient(180deg,#081224,#06102a);color:#e6eefc;padding:1.5rem 0;margin-top:2rem}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:0 1rem;flex-wrap:wrap}
+.logo-small{font-weight:800}
+.footer-socials a{color:#dbeafe;text-decoration:none;margin-left:1rem}
+
+.to-top{position:fixed;right:1rem;bottom:1rem;background:linear-gradient(180deg,var(--blue-500),var(--violet-600));color:#fff;border:0;padding:.6rem .75rem;border-radius:8px;box-shadow:0 10px 24px rgba(15,23,42,.18);cursor:pointer;display:none}
+
+.small{font-size:.9rem}
+
+/* logo imagen header (si usas <img class="logo-b">) */
+.logo-b{width:200px;max-width:25%;height:auto;object-fit:contain}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:900px){
+  .ubicacion-horarios{grid-template-columns:1fr}
+  .grupos-grid{grid-template-columns:1fr}
+
+  /* menú normal en móvil (home) */
+  .nav-links{
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:linear-gradient(90deg,var(--blue-500),var(--violet-600));
+    flex-direction:column;
+    padding:1rem;
+    display:none;
+  }
+  .nav-links.show{display:flex}
+  .nav-links a{padding:1rem;border-radius:4px}
+  .nav-toggle{display:block}
+  .header-actions{display:none}
+
+  /* íconos dentro del menú (solo móvil) */
+  .nav-socials{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    align-items:center;
+    padding:12px 0 4px;
+  }
+  .nav-socials .social-icon{width:22px;height:22px;object-fit:contain;display:block}
+
+  /* ===== MENÚ SINGLE (ministerios): al lado del logo, NO pegado al borde ===== */
+  .main-nav{flex:1;} /* permite que el nav use el espacio */
+  .nav-links.single{
+    position:static;
+    display:flex !important;
+    flex-direction:row;
+    align-items:center;
+    gap:10px;
+    padding:0;
+    margin:0;
+    background:transparent;
+    justify-content:flex-start;   /* <- clave: se pega al lado del logo, no a la derecha */
+  }
+  .nav-links.single a{padding:.4rem .5rem}
+  .nav-toggle{display:block} /* normal: home */
+  /* si quieres ocultar hamburguesa en ministerios, descomenta:
+  .nav-links.single + .nav-toggle{display:none;}
+  */
+
+
+  .header-inner{
+    position:relative;           /* referencia para el centrado */
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    min-height:56px;
+  }
+
+
+  .main-nav{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);  /* CENTRADO REAL */
+  }
+
+  .nav-links.single{
+    display:flex !important;
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+    padding:0;
+    margin:0;
+    background:transparent;
+  }
+
+  .nav-links.single a{
+    padding:.4rem .6rem;
+    font-weight:600;
+  }
+
+  .nav-toggle{display:none;}
+}
+
+@media (max-width:520px){
+  .hero h1{font-size:1.6rem}
+  .lead{padding:0 1rem}
+}
+
+/* ===== Ministerios mobile: logo | volver centro | hamburguesa, iconos dentro del menú ===== */
+
+.nav-links .nav-socials{display:none;} /* en desktop no se usa dentro del ul */
+
+@media (max-width:900px){
+
+  /* Header 3 columnas */
+  .header-inner{
+    display:grid !important;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:12px;
+  }
+
+  .logo{grid-column:1;}
+
+  /* Volver centrado (solo el primer li visible) */
+  .main-nav{grid-column:2; justify-self:center; position:static !important; transform:none !important;}
+
+  .nav-links.single{
+    display:flex !important;
+    list-style:none;
+    margin:0;
+    padding:0;
+    background:transparent;
+    position:static !important;
+    flex-direction:row;
+  }
+
+  .nav-links.single .nav-back a{
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:.4rem .6rem;
+    border-radius:8px;
+  }
+
+  /* Hamburguesa siempre a la derecha */
+  .nav-toggle{
+    grid-column:3;
+    justify-self:end;
+    display:block !important;
+  }
+
+  /* Ocultar redes del header en móvil (las mostramos dentro del menú) */
+  .header-actions{display:none !important;}
+
+  /* PANEL desplegable (cuando se abre) */
+  .nav-links.show{
+    position:fixed !important;
+    top:64px;
+    left:0;
+    right:0;
+    z-index:9999;
+    background:linear-gradient(90deg,var(--blue-500),var(--violet-600));
+    padding:14px 16px;
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+
+  /* En el panel, oculto el "volver" para no duplicarlo arriba */
+  .nav-links.show .nav-back{display:none;}
+
+  /* En el panel, muestro SOLO los iconos */
+  .nav-links.show .nav-socials{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    padding:6px 0;
+  }
+
+  .nav-links.show .nav-socials .social-icon{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+    display:block;
+  }
 }
