@@ -27,7 +27,7 @@ El sitio está desarrollado con tecnologías web estándar y se encuentra public
 
 El sitio está disponible públicamente en el dominio oficial de la iglesia:
 
-https://leonardochn.github.io/iproyeccopiapo/
+[iproyeccopiapo.cl](https://iproyeccopiapo.cl/)
 *(Reemplazar por el dominio real una vez configurado)*
 
 
