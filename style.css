@@ -159,6 +159,13 @@ button {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.social-pill img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
 .social-pill:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.2);
