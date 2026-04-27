@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventos | IPROYEC</title>
+  <link rel="icon" type="image/png" href="/img/favicon.ico" />
+  <meta
+    name="description"
+    content="Conoce los eventos y actividades publicadas por IPROYEC - Iglesia Proyección Cristiana."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="eventos.css" />
+</head>
+<body class="page-events">
+  <div class="site-shell">
+    <header class="site-header" id="inicio">
+      <div class="container header-wrap">
+        <a class="brand" href="../index.html#inicio" aria-label="Ir al inicio de IPROYEC">
+          <img src="../img/Logo Iproyec 1.png" alt="Logo IPROYEC" class="brand-mark" />
+          <div class="brand-copy">
+            <strong>IPROYEC</strong>
+            <span>Iglesia Proyección Cristiana</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav class="main-nav" id="main-navigation" aria-label="Navegación principal">
+          <a href="../index.html#nuestra-iglesia">Nuestra Iglesia</a>
+          <a href="../grupos/">Grupos</a>
+          <a href="../ministerios/">Ministerios</a>
+          <a href="./" aria-current="page">Eventos</a>
+        </nav>
+
+        <div class="social-cluster">
+          <span class="social-label">Nuestras Redes</span>
+          <a href="https://www.facebook.com/iproyeccopiapo/?locale=es_LA" class="social-pill" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon/facebook_icon.png" alt="Facebook" />
+          </a>
+
+          <a href="https://youtube.com/@iproyeccopiapo3895?si=1LPoeYdoLGMe8o49" class="social-pill" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon/yt_icon.png" alt="YouTube" />
+          </a>
+
+          <a href="https://www.instagram.com/iproyeccopiapo/" class="social-pill" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon/ig_icon.png" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="events-hero section-space">
+        <div class="events-hero__media">
+          <img src="../img/tempImageTqhCX4 1.png" alt="Congregación de IPROYEC reunida" />
+        </div>
+        <div class="events-hero__overlay"></div>
+
+        <div class="container events-hero__content">
+          <span class="eyebrow">Eventos IPROYEC</span>
+          <h1>Actividades y encuentros para crecer en comunidad</h1>
+          <p>
+            Revisa aquí los eventos publicados oficialmente por IPROYEC. Este espacio se actualiza desde el panel
+            de administración y muestra solo las actividades disponibles para la congregación y la comunidad.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-space events-section" id="eventos-publicados">
+        <div class="container events-heading">
+          <div>
+            <span class="events-kicker">Agenda publicada</span>
+            <h2>Próximos eventos</h2>
+          </div>
+          <p>
+            Cada publicación contiene la fecha del evento, imagen referencial y descripción oficial. Si necesitas
+            más información, revisa el detalle de cada actividad.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="events-status-card" id="loadingState" role="status">
+            <span class="events-loader" aria-hidden="true"></span>
+            <div>
+              <strong>Cargando eventos</strong>
+              <p>Estamos revisando las actividades publicadas.</p>
+            </div>
+          </div>
+
+          <div class="events-status-card events-status-card--empty" id="emptyState" hidden>
+            <div class="events-status-icon" aria-hidden="true">📅</div>
+            <div>
+              <strong>Actualmente no hay eventos publicados</strong>
+              <p>Vuelve pronto para conocer las próximas actividades de IPROYEC.</p>
+            </div>
+          </div>
+
+          <div class="events-status-card events-status-card--error" id="errorState" hidden>
+            <div class="events-status-icon" aria-hidden="true">⚠️</div>
+            <div>
+              <strong>No fue posible cargar los eventos</strong>
+              <p>Por favor intenta nuevamente más tarde.</p>
+            </div>
+          </div>
+
+          <div class="events-grid" id="eventsGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="events-invite section-space">
+        <div class="container events-invite__box">
+          <div>
+            <span class="events-kicker">Te esperamos</span>
+            <h2>Participa y comparte en comunidad</h2>
+            <p>
+              IPROYEC es un lugar para adorar, aprender, servir y caminar juntos en la fe.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="../index.html#visitanos">Cómo llegar 📍</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h3>Navegación</h3>
+          <a href="../index.html#inicio">Inicio</a>
+          <a href="../index.html#nuestra-iglesia">Sobre Nosotros</a>
+          <a href="../grupos/">Grupos</a>
+          <a href="../index.html#visitanos">Visítanos</a>
+          <a href="./">Eventos</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Horarios</h3>
+          <p>Jueves 20:00 hrs</p>
+          <p>Domingo 09:30 y 11:30 hrs</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contacto</h3>
+          <a href="tel:+56933358137">+56 9 3335 8137</a>
+          <a href="https://wa.me/56933358137" target="_blank" rel="noopener noreferrer">Whatsapp +56 9 3335 8137</a>
+          <a href="mailto:iproyec.copiapo@gmail.com">iproyec.copiapo@gmail.com</a>
+          <a href="https://maps.app.goo.gl/kbT8NR4Ff1dF1g4T7" target="_blank" rel="noopener noreferrer">Henríquez #771, Copiapó, Chile</a>
+        </div>
+
+        <div class="footer-branding">
+          <div class="footer-logo-stack">
+            <img src="../img/Trazo Logo blanco Iproyec 2.png" alt="Trazo del logo IPROYEC" class="footer-mark" />
+            <img src="../img/Trazo Logo blanco Iproyec 1.png" alt="Texto del logo IPROYEC" class="footer-wordmark" />
+          </div>
+          <p class="footer-verse">“Por tanto, id, y haced discípulos a todas las naciones”</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/iproyeccopiapo/?locale=es_LA" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://youtube.com/@iproyeccopiapo3895?si=e4wm-qj6_dRpBOmE" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.instagram.com/iproyeccopiapo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© 2026 IPROYEC — Todos los derechos reservados</span>
+      </div>
+    </footer>
+
+    <div class="event-modal" id="eventModal" hidden>
+      <div class="event-modal__backdrop" data-close-modal></div>
+      <article class="event-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="event-modal__close" type="button" aria-label="Cerrar detalle" data-close-modal>×</button>
+        <div class="event-modal__media" id="modalMedia"></div>
+        <div class="event-modal__body">
+          <span class="event-card__tag">Evento publicado</span>
+          <h2 id="modalTitle"></h2>
+          <p class="event-modal__date" id="modalDate"></p>
+          <p class="event-modal__description" id="modalDescription"></p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="../main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="eventos.js"></script>
+</body>
+</html>
