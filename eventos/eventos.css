@@ -463,3 +463,10 @@
     padding: 1.25rem;
   }
 }
+
+/* Corrección: evita que las tarjetas ocultas aparezcan por el display:flex. */
+.events-status-card[hidden],
+.event-modal[hidden],
+[hidden] {
+  display: none !important;
+}

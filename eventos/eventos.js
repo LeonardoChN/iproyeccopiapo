@@ -149,11 +149,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function showEmptyState() {
+    if (grid) grid.innerHTML = "";
+    hideStatusCards();
+    if (emptyState) emptyState.hidden = false;
+  }
+
   async function loadPublishedEvents() {
+    // Página pública limpia: no muestra loading ni warning al usuario.
+    // Si no hay eventos publicados, se muestra solo el mensaje institucional vacío.
+    hideStatusCards();
+
     if (!window.supabase) {
-      hideStatusCards();
-      errorState.hidden = false;
       console.error("No se pudo cargar Supabase JS.");
+      showEmptyState();
       return;
     }
 
@@ -175,15 +184,14 @@ document.addEventListener("DOMContentLoaded", () => {
       hideStatusCards();
 
       if (publishedEvents.length === 0) {
-        emptyState.hidden = false;
+        showEmptyState();
         return;
       }
 
       renderEvents(publishedEvents);
     } catch (error) {
       console.error("Error cargando eventos publicados:", error);
-      hideStatusCards();
-      errorState.hidden = false;
+      showEmptyState();
     }
   }
 
